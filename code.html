@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LEX-CON Safety Law | 건설안전 법령 검색기</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Public+Sans:wght@700;800;900&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#abd600",
+                        "on-tertiary": "#00363a",
+                        "surface-container-low": "#1c1b1b",
+                        "outline-variant": "#444933",
+                        "primary": "#ffffff",
+                        "on-primary-container": "#556d00",
+                        "on-tertiary-container": "#006f77",
+                        "on-secondary-fixed": "#370e00",
+                        "on-primary": "#283500",
+                        "on-surface": "#e5e2e1",
+                        "secondary-fixed": "#ffdbce",
+                        "tertiary-container": "#7df4ff",
+                        "on-secondary-fixed-variant": "#802a00",
+                        "secondary-fixed-dim": "#ffb59a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline": "#8e9379",
+                        "on-secondary": "#5a1b00",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#506600",
+                        "background": "#131313",
+                        "tertiary-fixed-dim": "#00dbe9",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-container": "#531900",
+                        "primary-container": "#c3f400",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "secondary": "#ffb59a",
+                        "on-error": "#690005",
+                        "surface-variant": "#353534",
+                        "surface-container": "#201f1f",
+                        "tertiary": "#ffffff",
+                        "on-background": "#e5e2e1",
+                        "on-surface-variant": "#c4c9ac",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#353534",
+                        "surface-container-high": "#2a2a2a",
+                        "surface": "#131313",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#161e00",
+                        "secondary-container": "#ff5e07",
+                        "error-container": "#93000a",
+                        "surface-dim": "#131313",
+                        "tertiary-fixed": "#7df4ff",
+                        "surface-tint": "#abd600",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "primary-fixed": "#c3f400",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed": "#002022"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-margin": "24px",
+                        "gutter": "16px",
+                        "stack-lg": "24px",
+                        "stack-sm": "4px",
+                        "stack-md": "12px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "data-mono": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Public Sans"],
+                        "display-xl": ["Public Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Public Sans"],
+                        "title-md": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "data-mono": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "title-md": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background-color: rgba(20, 20, 20, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+        }
+        .neon-text-glow {
+            text-shadow: 0 0 8px rgba(204, 255, 0, 0.6);
+        }
+        .bg-hero {
+            background-image: linear-gradient(to right, #080808 30%, rgba(8,8,8,0.4) 100%), url('https://lh3.googleusercontent.com/aida/AP1WRLuAZHp4_6JEAGIR8oSi5p-JcMrEufheT09TxxGy5CdyS9ey7OiAPdeF0La5U-QKsZ6mWv-e5kDEzg3u-gdZ68Gk4XfFb9D0RHesRChRNzMhi4dngMpgQctB3jmRIpwfjFQfhwSFotX-US_kxoD5rxKJryfwUku_Fpreat52flFR1C5ycOhfTnMdWdS8WkU5u6HofTl4vKNFbR3XGyDyYFr9-Jil7MHmlDixZlvkRpOzz_KGhTExw585YKJ-');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #abd600;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c3f400;
+        }
+    </style>
+</head>
+<body class="bg-[#080808] text-on-surface font-body-md overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Responsive hidden on desktop, used for structural reference if needed, but per rules, desktop focuses on SideNav multi-pane layout) -->
+<header class="hidden md:flex justify-between items-center max-w-container-max mx-auto px-gutter fixed top-0 w-full z-50 px-md py-xs bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-300 ease-in-out">
+<div class="text-headline-md font-headline-md text-secondary-container tracking-tighter">LEX-CON</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-container hover:text-secondary hover:bg-surface-container-high transition-colors cursor-pointer p-2 rounded-full">notifications</span>
+<span class="material-symbols-outlined text-secondary-container hover:text-secondary hover:bg-surface-container-high transition-colors cursor-pointer p-2 rounded-full">settings</span>
+<img alt="User avatar" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida/AP1WRLuAZHp4_6JEAGIR8oSi5p-JcMrEufheT09TxxGy5CdyS9ey7OiAPdeF0La5U-QKsZ6mWv-e5kDEzg3u-gdZ68Gk4XfFb9D0RHesRChRNzMhi4dngMpgQctB3jmRIpwfjFQfhwSFotX-US_kxoD5rxKJryfwUku_Fpreat52flFR1C5ycOhfTnMdWdS8WkU5u6HofTl4vKNFbR3XGyDyYFr9-Jil7MHmlDixZlvkRpOzz_KGhTExw585YKJ-"/>
+</div>
+</header>
+<div class="flex h-screen pt-[60px] md:pt-0">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col gap-sm py-lg fixed left-0 top-0 h-full w-[240px] z-40 bg-surface-container-low/70 backdrop-blur-lg border-r border-outline-variant/20 shadow-xl justify-between">
+<div>
+<div class="px-gutter mb-8">
+<div class="font-headline-md text-headline-md text-on-surface">LEX-CON AI</div>
+<div class="font-label-caps text-label-caps text-outline uppercase tracking-wider mt-1">Safety First</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined ml-2">dashboard</span>
+<span class="font-label-caps text-label-caps ml-2">Dashboard</span>
+</a>
+<!-- Active State -->
+<a class="bg-secondary-container text-on-secondary-container rounded-full mx-2 flex items-center gap-xs px-md py-sm shadow-[0_0_15px_rgba(255,94,7,0.4)]" href="#">
+<span class="material-symbols-outlined ml-2">gavel</span>
+<span class="font-label-caps text-label-caps ml-2">Laws</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined ml-2">fact_check</span>
+<span class="font-label-caps text-label-caps ml-2">Safety Check</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined ml-2">analytics</span>
+<span class="font-label-caps text-label-caps ml-2">Reports</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined ml-2">inventory_2</span>
+<span class="font-label-caps text-label-caps ml-2">Archive</span>
+</a>
+</nav>
+</div>
+<div class="px-gutter">
+<button class="w-full bg-primary-container text-on-primary-container font-label-caps text-label-caps py-3 rounded-full hover:bg-primary-fixed-dim transition-colors mb-4 uppercase">New Audit</button>
+<div class="flex flex-col gap-2 border-t border-outline-variant/20 pt-4">
+<a class="text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined ml-2">help</span>
+<span class="font-label-caps text-label-caps ml-2">Help</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined ml-2">logout</span>
+<span class="font-label-caps text-label-caps ml-2">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area (Multi-pane layout) -->
+<main class="flex-1 md:ml-[240px] h-full overflow-hidden flex flex-col bg-hero">
+<!-- Search & Filters Header -->
+<div class="p-container-margin border-b border-outline-variant/20 bg-[#080808]/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto flex gap-4 items-center">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-high border-b border-outline-variant text-on-surface font-data-mono text-data-mono py-4 pl-12 pr-4 focus:outline-none focus:border-primary-container focus:shadow-[0_1px_10px_rgba(204,255,0,0.2)] transition-all placeholder:text-outline placeholder:font-data-mono bg-transparent" placeholder="검색어 입력..." type="text" value="비계 설치 기준"/>
+</div>
+<button class="bg-surface-variant text-on-surface px-6 py-4 rounded-lg font-label-caps text-label-caps border border-outline-variant hover:bg-surface-container-highest transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        필터
+                    </button>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="flex-1 overflow-hidden flex max-w-full">
+<!-- Search Results Panel -->
+<div class="w-1/3 min-w-[320px] max-w-[400px] border-r border-outline-variant/20 overflow-y-auto bg-[#080808]/60 p-4 flex flex-col gap-4 custom-scrollbar">
+<div class="font-label-caps text-label-caps text-outline uppercase tracking-widest mb-2">검색 결과 (4건)</div>
+<!-- Result Card 1 (Active) -->
+<div class="glass-card rounded-xl p-4 cursor-pointer neon-glow border-primary-container/50 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary-container/10 rounded-bl-full -mr-8 -mt-8 group-hover:bg-primary-container/20 transition-all"></div>
+<div class="flex justify-between items-start mb-2">
+<span class="bg-primary-container text-on-primary-container font-label-caps text-[10px] px-2 py-1 rounded-sm">98% MATCH</span>
+<span class="text-tertiary-container font-data-mono text-[12px]">산업안전보건기준에 관한 규칙</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-1">제60조: 강관비계의 구조</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2 mt-2">사업주는 강관비계를 조립하는 경우에 다음 각 호의 사항을 준수하여야 한다.</p>
+</div>
+<!-- Result Card 2 -->
+<div class="glass-card rounded-xl p-4 cursor-pointer hover:bg-surface-container-low transition-colors group opacity-70 hover:opacity-100">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-surface-variant text-on-surface-variant font-label-caps text-[10px] px-2 py-1 rounded-sm border border-outline-variant/50">85% MATCH</span>
+<span class="text-outline font-data-mono text-[12px]">산업안전보건기준에 관한 규칙</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-1">제59조: 강관비계 조립 시의 준수사항</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2 mt-2">비계기둥에는 미끄러지거나 침하하는 것을 방지하기 위하여 밑받침철물을 사용하거나 깔판·깔목 등을 사용하여야 한다.</p>
+</div>
+<!-- Result Card 3 -->
+<div class="glass-card rounded-xl p-4 cursor-pointer hover:bg-surface-container-low transition-colors group opacity-70 hover:opacity-100">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-surface-variant text-on-surface-variant font-label-caps text-[10px] px-2 py-1 rounded-sm border border-outline-variant/50">72% MATCH</span>
+<span class="text-outline font-data-mono text-[12px]">산업안전보건기준에 관한 규칙</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-1">제62조: 강관비계의 조립 및 사용 시 주의사항</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2 mt-2">비계의 조립·해체 또는 변경 작업을 하는 경우에는 다음 각 호의 사항을 준수하여야 한다.</p>
+</div>
+</div>
+<!-- Main Detail View (Bento Grid) -->
+<div class="flex-1 overflow-y-auto p-container-margin custom-scrollbar bg-[#080808]/40">
+<div class="max-w-4xl mx-auto flex flex-col gap-6">
+<!-- Header Block -->
+<div class="glass-card rounded-2xl p-8 border-l-4 border-l-primary-container relative overflow-hidden">
+<!-- Shader Background Subtle Overlay -->
+<div class="absolute inset-0 opacity-10 pointer-events-none mix-blend-screen">
+
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary-container text-[32px]">menu_book</span>
+<span class="font-label-caps text-label-caps text-tertiary-container tracking-widest border border-tertiary-container/30 px-3 py-1 rounded-full bg-tertiary-container/10">산업안전보건기준에 관한 규칙</span>
+</div>
+<h1 class="font-display-xl text-display-xl text-primary mb-2">제60조: 강관비계의 구조</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">강관비계 설치 시 반드시 준수해야 하는 필수 구조적 요구사항</p>
+</div>
+</div>
+<!-- Bento Layout for Clauses -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Clause 1 -->
+<div class="glass-card rounded-xl p-6 relative">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary-container to-transparent opacity-50"></div>
+<div class="font-data-mono text-secondary-container text-2xl mb-4 font-bold">01</div>
+<h4 class="font-title-md text-title-md text-on-surface mb-3">비계기둥의 간격</h4>
+<p class="text-on-surface-variant leading-relaxed">
+                                    띠장 방향에서는 <span class="text-primary-container font-bold neon-text-glow">1.8미터 이하</span>, 장선(長線) 방향에서는 <span class="text-primary-container font-bold neon-text-glow">1.5미터 이하</span>로 할 것. 다만, 선박 및 보트 건조작업의 경우 안전성에 관하여 법 제14조제1항에 따른 관리감독자의 확인을 받은 경우에는 띠장 방향 및 장선 방향으로 각각 <span class="text-primary-container font-bold neon-text-glow">2.7미터 이하</span>로 할 수 있다.
+                                </p>
+</div>
+<!-- Clause 2 -->
+<div class="glass-card rounded-xl p-6 relative">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-tertiary-container to-transparent opacity-50"></div>
+<div class="font-data-mono text-tertiary-container text-2xl mb-4 font-bold">02</div>
+<h4 class="font-title-md text-title-md text-on-surface mb-3">띠장의 간격</h4>
+<p class="text-on-surface-variant leading-relaxed">
+                                    띠장 간격은 <span class="text-primary-container font-bold neon-text-glow">2.0미터 이하</span>로 할 것. 다만, 첫 번째 띠장은 지상으로부터 2.0미터 이하의 위치에 설치하여야 한다.
+                                </p>
+</div>
+<!-- Clause 3 -->
+<div class="glass-card rounded-xl p-6 relative lg:col-span-2">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-container to-transparent opacity-50"></div>
+<div class="font-data-mono text-primary-container text-2xl mb-4 font-bold">03</div>
+<h4 class="font-title-md text-title-md text-on-surface mb-3">벽이음 및 가새</h4>
+<p class="text-on-surface-variant leading-relaxed mb-4">
+                                    비계기둥의 제일 윗부분으로부터 31미터되는 지점 밑부분의 비계기둥은 2개의 강관으로 묶어 세울 것.
+                                    비계기둥 간의 적재하중은 400킬로그램을 초과하지 않도록 할 것.
+                                </p>
+<!-- Visual Data Block inside text -->
+<div class="bg-surface-container-highest rounded-lg p-4 flex items-center justify-between border border-outline-variant/30">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline mb-1">최대 적재하중</span>
+<span class="font-data-mono text-primary-container text-xl font-bold neon-text-glow">400 kg</span>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline mb-1">이중 강관 요구 지점</span>
+<span class="font-data-mono text-tertiary-container text-xl font-bold">31m 이하</span>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline mb-1">위반 시 제재</span>
+<span class="font-data-mono text-secondary-container text-xl font-bold">작업 중지</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Safety Quest Checklist -->
+<div class="hidden xl:flex w-[300px] border-l border-outline-variant/20 bg-surface-container-lowest/80 p-6 flex-col">
+<div class="flex items-center gap-2 mb-6 border-b border-outline-variant/20 pb-4">
+<span class="material-symbols-outlined text-primary-container">fact_check</span>
+<h3 class="font-title-md text-title-md text-on-surface">Compliance Quests</h3>
+</div>
+<!-- Progress Ring HUD -->
+<div class="flex justify-center mb-8 relative">
+<svg class="w-32 h-32 transform -rotate-90">
+<circle class="text-surface-container-high" cx="64" cy="64" fill="transparent" r="56" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary-container" cx="64" cy="64" fill="transparent" r="56" stroke="currentColor" stroke-dasharray="351.8" stroke-dashoffset="140.7" stroke-width="8" style="filter: drop-shadow(0 0 4px rgba(195, 244, 0, 0.5));"></circle>
+</svg>
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+<span class="font-display-xl text-3xl font-bold text-primary">60<span class="text-lg text-outline">%</span></span>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar flex flex-col gap-3">
+<!-- Quest Item 1 (Done) -->
+<div class="bg-surface-container-high/50 rounded-lg p-3 border border-outline-variant/30 flex gap-3 items-start opacity-60">
+<div class="mt-1">
+<span class="material-symbols-outlined text-outline">check_circle</span>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-outline line-through">기둥 간격 확인 (띠장 1.8m)</h5>
+<p class="text-[10px] text-outline mt-1 font-data-mono">Completed by AI Sensor</p>
+</div>
+</div>
+<!-- Quest Item 2 (Active) -->
+<div class="bg-surface-container/80 rounded-lg p-3 border border-primary-container/50 flex gap-3 items-start neon-glow">
+<div class="mt-1">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">radio_button_unchecked</span>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-primary">첫 번째 띠장 높이 (2.0m 이하)</h5>
+<p class="text-[10px] text-primary-container mt-1 font-data-mono">Action Required</p>
+</div>
+</div>
+<!-- Quest Item 3 (Pending) -->
+<div class="bg-surface-container-low/50 rounded-lg p-3 border border-outline-variant/30 flex gap-3 items-start hover:border-tertiary-container/30 transition-colors cursor-pointer">
+<div class="mt-1">
+<span class="material-symbols-outlined text-outline">radio_button_unchecked</span>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-on-surface-variant">적재하중 표지판 부착 (400kg)</h5>
+<p class="text-[10px] text-outline mt-1 font-data-mono">Pending</p>
+</div>
+</div>
+<!-- Quest Item 4 (Pending) -->
+<div class="bg-surface-container-low/50 rounded-lg p-3 border border-outline-variant/30 flex gap-3 items-start hover:border-tertiary-container/30 transition-colors cursor-pointer">
+<div class="mt-1">
+<span class="material-symbols-outlined text-outline">radio_button_unchecked</span>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-on-surface-variant">31m 지점 이중 강관 결속</h5>
+<p class="text-[10px] text-outline mt-1 font-data-mono">Pending</p>
+</div>
+</div>
+</div>
+<button class="mt-4 w-full bg-transparent border border-primary-container text-primary-container font-label-caps py-3 rounded-lg hover:bg-primary-container/10 transition-colors uppercase tracking-wider shadow-[0_0_10px_rgba(195,244,0,0.2)]">
+                        Generate Report
+                    </button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

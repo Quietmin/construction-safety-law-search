@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LEX-CON Safety Law | 건설안전 법령 검색기</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Public+Sans:wght@700;800;900&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#abd600",
+                        "on-tertiary": "#00363a",
+                        "surface-container-low": "#1c1b1b",
+                        "outline-variant": "#444933",
+                        "primary": "#ffffff",
+                        "on-primary-container": "#556d00",
+                        "on-tertiary-container": "#006f77",
+                        "on-secondary-fixed": "#370e00",
+                        "on-primary": "#283500",
+                        "on-surface": "#e5e2e1",
+                        "secondary-fixed": "#ffdbce",
+                        "tertiary-container": "#7df4ff",
+                        "on-secondary-fixed-variant": "#802a00",
+                        "secondary-fixed-dim": "#ffb59a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline": "#8e9379",
+                        "on-secondary": "#5a1b00",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#506600",
+                        "background": "#131313",
+                        "tertiary-fixed-dim": "#00dbe9",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-container": "#531900",
+                        "primary-container": "#c3f400",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "secondary": "#ffb59a",
+                        "on-error": "#690005",
+                        "surface-variant": "#353534",
+                        "surface-container": "#201f1f",
+                        "tertiary": "#ffffff",
+                        "on-background": "#e5e2e1",
+                        "on-surface-variant": "#c4c9ac",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#353534",
+                        "surface-container-high": "#2a2a2a",
+                        "surface": "#131313",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#161e00",
+                        "secondary-container": "#ff5e07",
+                        "error-container": "#93000a",
+                        "surface-dim": "#131313",
+                        "tertiary-fixed": "#7df4ff",
+                        "surface-tint": "#abd600",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "primary-fixed": "#c3f400",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed": "#002022"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-margin": "24px",
+                        "gutter": "16px",
+                        "stack-lg": "24px",
+                        "stack-sm": "4px",
+                        "stack-md": "12px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "data-mono": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Public Sans"],
+                        "display-xl": ["Public Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Public Sans"],
+                        "title-md": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "data-mono": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "title-md": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background-color: rgba(20, 20, 20, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+        }
+        .neon-text-glow {
+            text-shadow: 0 0 8px rgba(204, 255, 0, 0.6);
+        }
+        .bg-hero {
+            background-image: linear-gradient(to right, #080808 30%, rgba(8,8,8,0.4) 100%), url('https://lh3.googleusercontent.com/aida/AP1WRLuAZHp4_6JEAGIR8oSi5p-JcMrEufheT09TxxGy5CdyS9ey7OiAPdeF0La5U-QKsZ6mWv-e5kDEzg3u-gdZ68Gk4XfFb9D0RHesRChRNzMhi4dngMpgQctB3jmRIpwfjFQfhwSFotX-US_kxoD5rxKJryfwUku_Fpreat52flFR1C5ycOhfTnMdWdS8WkU5u6HofTl4vKNFbR3XGyDyYFr9-Jil7MHmlDixZlvkRpOzz_KGhTExw585YKJ-');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #abd600;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c3f400;
+        }
+        mark { background: transparent; color: #c3f400; font-weight: 700; text-shadow: 0 0 8px rgba(204, 255, 0, 0.6); }
+    </style>
+</head>
+<body class="bg-[#080808] text-on-surface font-body-md overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Responsive hidden on desktop, used for structural reference if needed, but per rules, desktop focuses on SideNav multi-pane layout) -->
+<header class="hidden md:flex justify-between items-center max-w-container-max mx-auto px-gutter fixed top-0 w-full z-50 px-md py-xs bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-300 ease-in-out">
+<div class="text-headline-md font-headline-md text-secondary-container tracking-tighter">LEX-CON</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-container hover:text-secondary hover:bg-surface-container-high transition-colors cursor-pointer p-2 rounded-full">notifications</span>
+<span class="material-symbols-outlined text-secondary-container hover:text-secondary hover:bg-surface-container-high transition-colors cursor-pointer p-2 rounded-full">settings</span>
+<img alt="User avatar" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida/AP1WRLuAZHp4_6JEAGIR8oSi5p-JcMrEufheT09TxxGy5CdyS9ey7OiAPdeF0La5U-QKsZ6mWv-e5kDEzg3u-gdZ68Gk4XfFb9D0RHesRChRNzMhi4dngMpgQctB3jmRIpwfjFQfhwSFotX-US_kxoD5rxKJryfwUku_Fpreat52flFR1C5ycOhfTnMdWdS8WkU5u6HofTl4vKNFbR3XGyDyYFr9-Jil7MHmlDixZlvkRpOzz_KGhTExw585YKJ-"/>
+</div>
+</header>
+<div class="flex h-screen pt-[60px] md:pt-[52px]">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col gap-sm py-lg fixed left-0 top-0 h-full w-[240px] z-40 bg-surface-container-low/70 backdrop-blur-lg border-r border-outline-variant/20 shadow-xl justify-between">
+<div>
+<div class="px-gutter mb-8">
+<div class="font-headline-md text-headline-md text-on-surface">LEX-CON AI</div>
+<div class="font-label-caps text-label-caps text-outline uppercase tracking-wider mt-1">Safety First</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="nav-link text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all" href="#" data-view="dashboard">
+<span class="material-symbols-outlined ml-2">dashboard</span>
+<span class="font-label-caps text-label-caps ml-2">Dashboard</span>
+</a>
+<!-- Active State -->
+<a class="nav-link bg-secondary-container text-on-secondary-container rounded-full mx-2 flex items-center gap-xs px-md py-sm shadow-[0_0_15px_rgba(255,94,7,0.4)]" href="#" data-view="laws">
+<span class="material-symbols-outlined ml-2">gavel</span>
+<span class="font-label-caps text-label-caps ml-2">Laws</span>
+</a>
+<a class="nav-link text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all" href="#" data-view="safety">
+<span class="material-symbols-outlined ml-2">fact_check</span>
+<span class="font-label-caps text-label-caps ml-2">Safety Check</span>
+</a>
+<a class="nav-link text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all" href="#" data-view="reports">
+<span class="material-symbols-outlined ml-2">analytics</span>
+<span class="font-label-caps text-label-caps ml-2">Reports</span>
+</a>
+<a class="nav-link text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all" href="#" data-view="archive">
+<span class="material-symbols-outlined ml-2">inventory_2</span>
+<span class="font-label-caps text-label-caps ml-2">Archive</span>
+</a>
+</nav>
+</div>
+<div class="px-gutter">
+<button id="newAuditBtn" class="w-full bg-primary-container text-on-primary-container font-label-caps text-label-caps py-3 rounded-full hover:bg-primary-fixed-dim transition-colors mb-4 uppercase">New Audit</button>
+<div class="flex flex-col gap-2 border-t border-outline-variant/20 pt-4">
+<a class="nav-link text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all" href="#" data-view="help">
+<span class="material-symbols-outlined ml-2">help</span>
+<span class="font-label-caps text-label-caps ml-2">Help</span>
+</a>
+<a id="logoutBtn" class="text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined ml-2">logout</span>
+<span class="font-label-caps text-label-caps ml-2">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area (Multi-pane layout) -->
+<main class="flex-1 md:ml-[240px] h-full overflow-hidden flex flex-col bg-hero">
+<!-- Search & Filters Header -->
+<div id="searchHeader" class="p-container-margin border-b border-outline-variant/20 bg-[#080808]/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto flex gap-4 items-center">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input id="searchInput" class="w-full bg-surface-container-high border-b border-outline-variant text-on-surface font-data-mono text-data-mono py-4 pl-12 pr-4 focus:outline-none focus:border-primary-container focus:shadow-[0_1px_10px_rgba(204,255,0,0.2)] transition-all placeholder:text-outline placeholder:font-data-mono bg-transparent" placeholder="검색어 입력..." type="text" value="비계 설치 기준"/>
+</div>
+<div class="relative">
+<button id="filterBtn" class="bg-surface-variant text-on-surface px-6 py-4 rounded-lg font-label-caps text-label-caps border border-outline-variant hover:bg-surface-container-highest transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<span id="filterLabel">필터</span>
+</button>
+<div id="filterMenu" class="hidden absolute right-0 mt-2 w-56 z-50 glass-card rounded-xl p-2 border border-primary-container/30 shadow-[0_0_20px_rgba(195,244,0,0.15)]"></div>
+</div>
+</div>
+</div>
+<!-- Content Grid -->
+<div id="contentGrid" class="flex-1 overflow-hidden flex max-w-full">
+<!-- Search Results Panel -->
+<div class="w-1/3 min-w-[320px] max-w-[400px] border-r border-outline-variant/20 overflow-y-auto bg-[#080808]/60 p-4 flex flex-col gap-4 custom-scrollbar">
+<div id="resultCount" class="font-label-caps text-label-caps text-outline uppercase tracking-widest mb-2">검색 결과 (0건)</div>
+<div id="resultList" class="flex flex-col gap-4"></div>
+</div>
+<!-- Main Detail View (Bento Grid) -->
+<div class="flex-1 overflow-y-auto p-container-margin custom-scrollbar bg-[#080808]/40">
+<div id="detailView" class="max-w-4xl mx-auto flex flex-col gap-6"></div>
+</div>
+<!-- Right Sidebar: Safety Quest Checklist -->
+<div class="hidden xl:flex w-[300px] border-l border-outline-variant/20 bg-surface-container-lowest/80 p-6 flex-col">
+<div class="flex items-center gap-2 mb-6 border-b border-outline-variant/20 pb-4">
+<span class="material-symbols-outlined text-primary-container">fact_check</span>
+<h3 class="font-title-md text-title-md text-on-surface">Compliance Quests</h3>
+</div>
+<!-- Progress Ring HUD -->
+<div class="flex justify-center mb-8 relative">
+<svg class="w-32 h-32 transform -rotate-90">
+<circle class="text-surface-container-high" cx="64" cy="64" fill="transparent" r="56" stroke="currentColor" stroke-width="8"></circle>
+<circle id="progressRing" class="text-primary-container" cx="64" cy="64" fill="transparent" r="56" stroke="currentColor" stroke-dasharray="351.8" stroke-dashoffset="351.8" stroke-width="8" style="filter: drop-shadow(0 0 4px rgba(195, 244, 0, 0.5));"></circle>
+</svg>
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+<span class="font-display-xl text-3xl font-bold text-primary"><span id="progressText">0</span><span class="text-lg text-outline">%</span></span>
+</div>
+</div>
+<div id="questList" class="flex-1 overflow-y-auto custom-scrollbar flex flex-col gap-3"></div>
+<button id="reportBtn" class="mt-4 w-full bg-transparent border border-primary-container text-primary-container font-label-caps py-3 rounded-lg hover:bg-primary-container/10 transition-colors uppercase tracking-wider shadow-[0_0_10px_rgba(195,244,0,0.2)]">
+                        Generate Report
+                    </button>
+</div>
+</div>
+<!-- Alternate views (Dashboard / Safety Check / Reports / Archive / Help) -->
+<div id="altView" class="hidden flex-1 overflow-y-auto p-container-margin custom-scrollbar bg-[#080808]/40"></div>
+</main>
+</div>
+<script id="lawdata" type="application/json">/*__LAWDATA__*/null</script>
+<script>
+(function () {
+  "use strict";
+  var DATA = JSON.parse(document.getElementById('lawdata').textContent || 'null');
+  if (!DATA) { return; }
+  var ARTICLES = DATA.articles;
+  ARTICLES.forEach(function (a, i) { a.id = i; });
+  var LAWS = DATA.laws;
+  var LAW_ORDER = {}; LAWS.forEach(function (l, i) { LAW_ORDER[l.key] = i; });
+
+  var QUICK = ['비계','추락 방지','굴착','거푸집 동바리','안전난간','밀폐공간','전기','크레인','안전모','도급','안전보건교육','중대재해'];
+
+  // 현장용어 -> 법령용어 동의어/연관어 매핑 (양방향으로 확장)
+  var SYNONYMS = [
+    ['낙하', '추락', '떨어짐', '비래'],
+    ['넘어짐', '전도', '미끄러짐'],
+    ['무너짐', '붕괴', '도괴'],
+    ['끼임', '협착'],
+    ['감전', '전기', '충전부'],
+    ['질식', '밀폐공간', '산소결핍'],
+    ['소음', '청력', '난청'],
+    ['분진', '먼지', '분진작업'],
+    ['사다리', '이동식사다리'],
+    ['고소작업', '높은곳', '추락'],
+    ['중장비', '차량계', '건설기계'],
+    ['지게차', '차량계하역운반기계'],
+    ['용접', '화기', '불티'],
+    ['보호구', '안전모', '안전대', '보안경'],
+    ['교육', '안전보건교육'],
+    ['하청', '도급', '수급인', '관계수급인'],
+    ['설치기준', '구조', '설치', '기준'],
+    ['강관비계', '강관', '비계']
+  ];
+  var SYN_MAP = {};
+  function nrm(s) { return String(s).toLowerCase().replace(/\s+/g, ''); }
+  SYNONYMS.forEach(function (grp) {
+    grp.forEach(function (w) {
+      var key = nrm(w);
+      SYN_MAP[key] = (SYN_MAP[key] || []).concat(grp.map(nrm));
+    });
+  });
+
+  // 각 조문에 정규화(공백제거) 검색 필드를 미리 계산해 둔다
+  ARTICLES.forEach(function (a) {
+    a._head = nrm(a.article + a.title);
+    a._body = nrm(a.body);
+    a._all = a._head + a._body;
+  });
+
+  var state = { filter: 'all', results: [], selectedId: null, checks: {}, tokens: [] };
+
+  // ---------- utils ----------
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function tokenize(q) {
+    return (q || '').trim().split(/\s+/).filter(function (t) { return t.length > 0; });
+  }
+  // 강조: 토큰과 그 구성 글자 사이에 공백이 끼어 있어도 매칭되도록 \s* 삽입
+  function highlight(text, tokens) {
+    var html = esc(text);
+    var terms = highlightTerms(tokens);
+    terms.forEach(function (t) {
+      if (!t || t.length < 1) return;
+      var pat = t.split('').map(function (ch) { return ch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('\\s*');
+      var re = new RegExp('(' + pat + ')', 'gi');
+      html = html.replace(re, '<mark>$1</mark>');
+    });
+    return html;
+  }
+  // 강조 대상 = 입력 토큰 + 동의어 + 길이가 긴 합성어의 분해 토큰
+  function highlightTerms(tokens) {
+    var set = {};
+    (tokens || []).forEach(function (t) {
+      var k = nrm(t);
+      if (k.length >= 2) set[k] = 1;
+      (SYN_MAP[k] || []).forEach(function (s) { if (s.length >= 2) set[s] = 1; });
+    });
+    return Object.keys(set);
+  }
+  function countOccur(hay, needle) {
+    if (!needle) return 0;
+    var n = 0, idx = 0;
+    while ((idx = hay.indexOf(needle, idx)) !== -1) { n++; idx += needle.length; }
+    return n;
+  }
+  // 한 토큰을 검색용 변형들로 확장: 자기 자신 + 동의어 + (합성어면) 2글자 단위 분해
+  function expandToken(t) {
+    var base = nrm(t);
+    var variants = {};
+    if (base.length >= 2) variants[base] = 3;            // 원형: 가중치 높음
+    (SYN_MAP[base] || []).forEach(function (s) { if (!variants[s]) variants[s] = 2; });
+    if (base.length >= 4) {                               // 합성어 분해 (예: 설치기준 -> 설치, 기준)
+      for (var i = 0; i + 2 <= base.length; i += 2) {
+        var part = base.slice(i, i + 2);
+        if (!variants[part]) variants[part] = 1;
+      }
+    }
+    return variants; // { 변형: 가중치 }
+  }
+
+  // ---------- search ----------
+  // 입력을 그대로 다 만족하지 않아도(부분 일치) 관련 조문을 찾아 관련도순으로 보여준다.
+  // 각 입력어를 동의어/분해 변형으로 확장하고, 더 많은 입력어를 충족할수록 상위로 정렬.
+  function search() {
+    var qToks = state.tokens;
+    var pool = ARTICLES.filter(function (a) {
+      return state.filter === 'all' || a.lawKey === state.filter;
+    });
+    var scored = [];
+    if (qToks.length) {
+      var expanded = qToks.map(expandToken); // [{variant: weight}, ...]
+      pool.forEach(function (a) {
+        var total = 0, coverage = 0;
+        for (var i = 0; i < expanded.length; i++) {
+          var vars = expanded[i], best = 0;
+          for (var v in vars) {
+            var w = vars[v], s = 0;
+            if (a._head.indexOf(v) !== -1) s += 100 * w;
+            s += countOccur(a._body, v) * w;
+            if (s > best) best = s;
+          }
+          if (best > 0) { coverage++; total += best; }
+        }
+        if (coverage > 0) { scored.push({ a: a, score: total + coverage * 200, coverage: coverage }); }
+      });
+      scored.sort(function (x, y) {
+        if (y.coverage !== x.coverage) return y.coverage - x.coverage;
+        if (y.score !== x.score) return y.score - x.score;
+        if (LAW_ORDER[x.a.lawKey] !== LAW_ORDER[y.a.lawKey]) return LAW_ORDER[x.a.lawKey] - LAW_ORDER[y.a.lawKey];
+        if (x.a.jo !== y.a.jo) return x.a.jo - y.a.jo;
+        return x.a.sub - y.a.sub;
+      });
+    }
+    state.results = scored;
+    renderResults();
+    if (scored.length) {
+      selectArticle(scored[0].a.id);
+    } else {
+      renderEmptyDetail();
+    }
+  }
+
+  // ---------- results list ----------
+  function renderResults() {
+    var count = state.results.length;
+    document.getElementById('resultCount').textContent = '검색 결과 (' + count + '건)';
+    var box = document.getElementById('resultList');
+    if (count === 0) {
+      box.innerHTML = quickStartHtml();
+      bindQuick();
+      return;
+    }
+    var maxScore = state.results[0].score || 1;
+    var html = state.results.slice(0, 100).map(function (r) {
+      var a = r.a;
+      var pct = Math.max(50, Math.min(99, Math.round(50 + 49 * (r.score / maxScore))));
+      var active = a.id === state.selectedId;
+      var preview = a.body.replace(/\s+/g, ' ').trim();
+      if (active) {
+        return '' +
+          '<div class="glass-card rounded-xl p-4 cursor-pointer neon-glow border-primary-container/50 relative overflow-hidden group" data-id="' + a.id + '">' +
+          '<div class="absolute top-0 right-0 w-16 h-16 bg-primary-container/10 rounded-bl-full -mr-8 -mt-8 group-hover:bg-primary-container/20 transition-all"></div>' +
+          '<div class="flex justify-between items-start mb-2">' +
+          '<span class="bg-primary-container text-on-primary-container font-label-caps text-[10px] px-2 py-1 rounded-sm">' + pct + '% MATCH</span>' +
+          '<span class="text-tertiary-container font-data-mono text-[12px]">' + esc(a.law) + '</span>' +
+          '</div>' +
+          '<h3 class="font-title-md text-title-md text-primary mb-1">' + highlight(a.article + ': ' + a.title, state.tokens) + '</h3>' +
+          '<p class="text-on-surface-variant text-sm line-clamp-2 mt-2">' + highlight(preview, state.tokens) + '</p>' +
+          '</div>';
+      }
+      return '' +
+        '<div class="glass-card rounded-xl p-4 cursor-pointer hover:bg-surface-container-low transition-colors group opacity-70 hover:opacity-100" data-id="' + a.id + '">' +
+        '<div class="flex justify-between items-start mb-2">' +
+        '<span class="bg-surface-variant text-on-surface-variant font-label-caps text-[10px] px-2 py-1 rounded-sm border border-outline-variant/50">' + pct + '% MATCH</span>' +
+        '<span class="text-outline font-data-mono text-[12px]">' + esc(a.law) + '</span>' +
+        '</div>' +
+        '<h3 class="font-title-md text-title-md text-on-surface mb-1">' + highlight(a.article + ': ' + a.title, state.tokens) + '</h3>' +
+        '<p class="text-on-surface-variant text-sm line-clamp-2 mt-2">' + highlight(preview, state.tokens) + '</p>' +
+        '</div>';
+    }).join('');
+    box.innerHTML = html;
+    Array.prototype.forEach.call(box.querySelectorAll('[data-id]'), function (el) {
+      el.addEventListener('click', function () { selectArticle(parseInt(el.getAttribute('data-id'), 10)); });
+    });
+  }
+
+  function quickStartHtml() {
+    var chips = QUICK.map(function (q) {
+      return '<button class="quick-chip bg-[#080808] border-2 border-tertiary-container/70 text-tertiary-container font-label-caps text-label-caps px-3 py-2 rounded-full hover:bg-tertiary-container/10 hover:border-tertiary-container transition-colors" data-q="' + esc(q) + '">' + esc(q) + '</button>';
+    }).join('');
+    return '' +
+      '<div class="glass-card rounded-xl p-5">' +
+      '<div class="font-label-caps text-label-caps text-secondary-container uppercase tracking-widest mb-3">자주 찾는 항목</div>' +
+      '<div class="flex flex-wrap gap-2">' + chips + '</div>' +
+      '<p class="text-outline text-sm mt-4 font-data-mono">' + ARTICLES.length + '개 조문 · 검색어를 입력하세요</p>' +
+      '</div>';
+  }
+  function bindQuick() {
+    Array.prototype.forEach.call(document.querySelectorAll('.quick-chip'), function (el) {
+      el.addEventListener('click', function () {
+        var q = el.getAttribute('data-q');
+        document.getElementById('searchInput').value = q;
+        state.tokens = tokenize(q);
+        search();
+      });
+    });
+  }
+
+  // ---------- clause / checklist parsing ----------
+  var CIRCLED = '①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳';
+  function splitClauses(body) {
+    var t = body;
+    // ensure each 항(circled) starts on its own line
+    for (var i = 0; i < CIRCLED.length; i++) {
+      var ch = CIRCLED[i];
+      t = t.split(ch).join('\n' + ch);
+    }
+    var lines = t.split(/\n+/);
+    var out = [];
+    lines.forEach(function (ln) {
+      ln = ln.trim();
+      if (ln) out.push(ln);
+    });
+    return out;
+  }
+
+  var OBL = /(할 것|하여야 한다|해야 한다|받아야 한다|두어야 한다|갖추어야 한다|마련해야 한다|마련하여야 한다|준수해야 한다|준수하여야 한다|실시해야 한다|실시하여야 한다|해서는 아니 된다|하여서는 아니 된다|아니 된다|지켜야 한다|확인해야 한다|확인하여야 한다|점검해야 한다|착용하여야 한다|착용해야 한다|설치해야 한다|설치하여야 한다|조치해야 한다|조치하여야 한다)/;
+  var EXC = /(할 수 없다|예외로 한다|하지 아니할 수 있다)/;
+
+  function sentenceSplit(clause) {
+    // split on '다.' boundaries while keeping '할 것' segments
+    var parts = clause.split(/(?<=다\.)\s+(?=[가-힣0-9①-⑳「(])/);
+    var res = [];
+    parts.forEach(function (p) { p = p.trim(); if (p) res.push(p); });
+    return res;
+  }
+
+  function buildChecklist(article) {
+    var items = [];
+    var seen = {};
+    var clauses = splitClauses(article.body);
+    clauses.forEach(function (cl) {
+      sentenceSplit(cl).forEach(function (s) {
+        if (OBL.test(s) && !EXC.test(s)) {
+          // build label: strip <개정...>, cut at 다만 / 단서
+          var label = s.replace(/<[^>]*>/g, '').trim();
+          var cut = label.search(/다만|단서/);
+          if (cut > 12) label = label.slice(0, cut).trim();
+          label = label.replace(/[\s·]+$/, '');
+          if (label.length > 64) label = label.slice(0, 62) + '…';
+          var key = label.slice(0, 40);
+          if (!seen[key] && label.length >= 6) { seen[key] = 1; items.push({ label: label, full: s }); }
+        }
+      });
+    });
+    return items;
+  }
+
+  function extractMetrics(body) {
+    var re = /(\d+(?:\.\d+)?)\s*(밀리미터|미리미터|센티미터|미터|킬로그램|킬로그램중|퍼센트|볼트|와트|럭스|데시벨|시간|개월|일|년|명|배|도)\s*(이하|이상|초과|미만|이내)?/g;
+    var found = [], seen = {}, m;
+    while ((m = re.exec(body)) !== null) {
+      var val = m[1] + ' ' + m[2] + (m[3] ? ' ' + m[3] : '');
+      if (!seen[val]) { seen[val] = 1; found.push(val); }
+      if (found.length >= 3) break;
+    }
+    return found;
+  }
+
+  // ---------- detail view ----------
+  var ACCENTS = ['secondary-container', 'tertiary-container', 'primary-container'];
+  function clauseLabel(text) {
+    var m = text.match(/^([①-⑳])/);
+    if (m) return m[1] + ' 항';
+    m = text.match(/^(\d+)\.\s/);
+    if (m) return '제' + m[1] + '호';
+    m = text.match(/^([가-힣])\.\s/);
+    if (m) return m[1] + '. 목';
+    return '본문';
+  }
+
+  function selectArticle(id) {
+    state.selectedId = id;
+    state.checks = {};
+    renderResults();
+    var a = ARTICLES.filter(function (x) { return x.id === id; })[0];
+    if (!a) { renderEmptyDetail(); return; }
+    renderDetail(a);
+    renderChecklist(a);
+  }
+
+  function renderEmptyDetail() {
+    document.getElementById('detailView').innerHTML = '' +
+      '<div class="glass-card rounded-2xl p-8 border-l-4 border-l-tertiary-container">' +
+      '<div class="flex items-center gap-3 mb-4"><span class="material-symbols-outlined text-tertiary-container text-[32px]">search</span>' +
+      '<span class="font-label-caps text-label-caps text-tertiary-container tracking-widest border border-tertiary-container/30 px-3 py-1 rounded-full bg-tertiary-container/10">LEX-CON</span></div>' +
+      '<h1 class="font-display-xl text-display-xl text-primary mb-2">검색어를 입력하세요</h1>' +
+      '<p class="font-body-lg text-body-lg text-on-surface-variant">현장 용어(비계, 추락, 굴착 등)로 검색하면 관련 법 조문과 현장 조치 체크리스트를 보여줍니다.</p>' +
+      '</div>';
+    document.getElementById('questList').innerHTML = '';
+    setProgress(0);
+  }
+
+  function renderDetail(a) {
+    var clauses = splitClauses(a.body);
+    var metrics = extractMetrics(a.body);
+    var subtitle = a.chapter ? esc(a.chapter) : esc(a.law);
+
+    var cards = clauses.map(function (cl, idx) {
+      var accent = ACCENTS[idx % ACCENTS.length];
+      var num = (idx + 1 < 10 ? '0' : '') + (idx + 1);
+      var label = clauseLabel(cl);
+      var span2 = (idx === clauses.length - 1 && clauses.length % 2 === 1) ? ' lg:col-span-2' : '';
+      var bodyHtml = neonNumbers(highlight(cl, state.tokens));
+      return '' +
+        '<div class="glass-card rounded-xl p-6 relative' + span2 + '">' +
+        '<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-' + accent + ' to-transparent opacity-50"></div>' +
+        '<div class="font-data-mono text-' + accent + ' text-2xl mb-4 font-bold">' + num + '</div>' +
+        '<h4 class="font-title-md text-title-md text-on-surface mb-3">' + esc(label) + '</h4>' +
+        '<p class="text-on-surface-variant leading-relaxed">' + bodyHtml + '</p>' +
+        '</div>';
+    }).join('');
+
+    var statBlock = '';
+    if (metrics.length) {
+      var cells = [];
+      var colors = ['text-primary-container neon-text-glow', 'text-tertiary-container', 'text-secondary-container'];
+      metrics.forEach(function (mv, i) {
+        if (i > 0) cells.push('<div class="h-8 w-[1px] bg-outline-variant"></div>');
+        cells.push('<div class="flex flex-col"><span class="font-label-caps text-label-caps text-outline mb-1">기준 ' + (i + 1) + '</span>' +
+          '<span class="font-data-mono ' + colors[i % colors.length] + ' text-xl font-bold">' + esc(mv) + '</span></div>');
+      });
+      statBlock = '<div class="glass-card rounded-xl p-6 relative lg:col-span-2">' +
+        '<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-container to-transparent opacity-50"></div>' +
+        '<h4 class="font-title-md text-title-md text-on-surface mb-3">핵심 수치 기준</h4>' +
+        '<div class="bg-surface-container-highest rounded-lg p-4 flex items-center justify-between border border-outline-variant/30">' + cells.join('') + '</div></div>';
+    }
+
+    var disclaimer = '<div class="glass-card rounded-xl p-4 border border-secondary-container/40 flex items-start gap-3">' +
+      '<span class="material-symbols-outlined text-secondary-container">warning</span>' +
+      '<p class="text-on-surface-variant text-sm leading-relaxed">본 내용은 <span class="text-secondary-container font-bold">현장 참고용</span>이며 법적 효력이 없습니다. 우측 체크리스트는 조문에서 자동 추출된 것으로 누락·오추출 가능성이 있으니, 실제 적용 시 반드시 법령 원문과 안전관리자 등 전문가의 확인을 받으시기 바랍니다.</p></div>';
+
+    // 조문 전문(원문) — 가공 없이 그대로, 줄바꿈 보존
+    var original = a.article + '(' + a.title + ') ' + a.body;
+    var fullText = '<div class="glass-card rounded-2xl p-8 relative overflow-hidden border-l-4 border-l-tertiary-container">' +
+      '<div class="flex items-center gap-2 mb-4 border-b border-outline-variant/20 pb-3">' +
+      '<span class="material-symbols-outlined text-tertiary-container">article</span>' +
+      '<h3 class="font-title-md text-title-md text-on-surface">조문 전문 (원문)</h3>' +
+      '<span class="ml-auto font-data-mono text-[12px] text-outline">' + esc(a.law) + (a.chapter ? ' · ' + esc(a.chapter) : '') + '</span></div>' +
+      '<div class="font-body-md text-body-md text-on-surface-variant leading-relaxed" style="white-space:pre-line">' +
+      neonNumbers(highlight(original, state.tokens)) + '</div></div>';
+
+    var breakdownLabel = clauses.length > 1
+      ? '<div class="font-label-caps text-label-caps text-outline uppercase tracking-widest mt-2">조문 구조 분석 (항·호별)</div>'
+      : '';
+
+    document.getElementById('detailView').innerHTML = '' +
+      '<div class="glass-card rounded-2xl p-8 border-l-4 border-l-primary-container relative overflow-hidden">' +
+      '<div class="relative z-10">' +
+      '<div class="flex items-center gap-3 mb-4">' +
+      '<span class="material-symbols-outlined text-primary-container text-[32px]">menu_book</span>' +
+      '<span class="font-label-caps text-label-caps text-tertiary-container tracking-widest border border-tertiary-container/30 px-3 py-1 rounded-full bg-tertiary-container/10">' + esc(a.law) + '</span>' +
+      '</div>' +
+      '<h1 class="font-display-xl text-display-xl text-primary mb-2">' + highlight(a.article + ': ' + a.title, state.tokens) + '</h1>' +
+      '<p class="font-body-lg text-body-lg text-on-surface-variant">' + subtitle + '</p>' +
+      '</div></div>' +
+      fullText +
+      breakdownLabel +
+      '<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">' + cards + statBlock + '</div>' +
+      disclaimer;
+    document.querySelector('.flex-1.overflow-y-auto.p-container-margin').scrollTop = 0;
+  }
+
+  function neonNumbers(html) {
+    return html.replace(/(\d+(?:\.\d+)?\s*(?:밀리미터|미리미터|센티미터|미터|킬로그램|퍼센트|볼트|와트|럭스|데시벨|시간|개월|일|년|명|배|도)\s*(?:이하|이상|초과|미만|이내)?)/g,
+      '<span class="text-primary-container font-bold neon-text-glow">$1</span>');
+  }
+
+  // ---------- checklist ----------
+  var CURRENT_QUESTS = [];
+  function renderChecklist(a) {
+    var items = buildChecklist(a);
+    CURRENT_QUESTS = items;
+    paintQuests();
+  }
+  function paintQuests() {
+    var items = CURRENT_QUESTS;
+    var box = document.getElementById('questList');
+    if (!items.length) {
+      box.innerHTML = '<div class="bg-surface-container-low/50 rounded-lg p-4 border border-outline-variant/30 text-outline text-sm font-data-mono">이 조문에서 자동 추출된 조치 항목이 없습니다.</div>';
+      setProgress(0);
+      return;
+    }
+    box.innerHTML = items.map(function (it, i) {
+      return questHtml(it, i, !!state.checks[i]);
+    }).join('');
+    Array.prototype.forEach.call(box.querySelectorAll('.quest-item'), function (el) {
+      el.addEventListener('click', function () {
+        var i = el.getAttribute('data-i');
+        state.checks[i] = !state.checks[i];
+        paintQuests();
+      });
+    });
+    updateProgress(items);
+  }
+
+  function questHtml(it, i, done) {
+    if (done) {
+      return '<div class="quest-item bg-surface-container-high/50 rounded-lg p-3 border border-outline-variant/30 flex gap-3 items-start opacity-60 cursor-pointer" data-i="' + i + '">' +
+        '<div class="mt-1"><span class="material-symbols-outlined text-outline">check_circle</span></div>' +
+        '<div><h5 class="font-label-caps text-label-caps text-outline line-through">' + esc(it.label) + '</h5>' +
+        '<p class="text-[10px] text-outline mt-1 font-data-mono">Completed</p></div></div>';
+    }
+    return '<div class="quest-item bg-surface-container-low/50 rounded-lg p-3 border border-outline-variant/30 flex gap-3 items-start hover:border-tertiary-container/30 transition-colors cursor-pointer" data-i="' + i + '">' +
+      '<div class="mt-1"><span class="material-symbols-outlined text-outline">radio_button_unchecked</span></div>' +
+      '<div><h5 class="font-label-caps text-label-caps text-on-surface-variant leading-snug">' + esc(it.label) + '</h5>' +
+      '<p class="text-[10px] text-outline mt-1 font-data-mono">Pending</p></div></div>';
+  }
+
+  function updateProgress(items) {
+    var done = 0;
+    for (var k in state.checks) { if (state.checks[k]) done++; }
+    var pct = items.length ? Math.round(done / items.length * 100) : 0;
+    setProgress(pct);
+  }
+  function setProgress(pct) {
+    var C = 351.8;
+    document.getElementById('progressRing').setAttribute('stroke-dashoffset', (C * (1 - pct / 100)).toFixed(1));
+    document.getElementById('progressText').textContent = pct;
+  }
+
+  // ---------- filter menu ----------
+  function buildFilterMenu() {
+    var menu = document.getElementById('filterMenu');
+    var opts = [{ key: 'all', label: '전체', count: ARTICLES.length }].concat(
+      LAWS.map(function (l) { return { key: l.key, label: l.short, count: l.count }; }));
+    menu.innerHTML = opts.map(function (o) {
+      var active = state.filter === o.key;
+      return '<button class="filter-opt w-full text-left flex justify-between items-center px-3 py-2 rounded-lg font-label-caps text-label-caps transition-colors ' +
+        (active ? 'bg-secondary-container text-on-secondary-container' : 'text-on-surface-variant hover:bg-surface-variant/50') + '" data-key="' + o.key + '">' +
+        '<span>' + esc(o.label) + '</span><span class="font-data-mono text-[11px] opacity-80">' + o.count + '</span></button>';
+    }).join('');
+    Array.prototype.forEach.call(menu.querySelectorAll('.filter-opt'), function (el) {
+      el.addEventListener('click', function () {
+        state.filter = el.getAttribute('data-key');
+        var lbl = opts.filter(function (o) { return o.key === state.filter; })[0].label;
+        document.getElementById('filterLabel').textContent = state.filter === 'all' ? '필터' : lbl;
+        menu.classList.add('hidden');
+        buildFilterMenu();
+        search();
+      });
+    });
+  }
+
+  // ---------- view router ----------
+  var NAV_INACTIVE = 'nav-link text-on-surface-variant flex items-center gap-xs px-md py-sm hover:text-on-surface hover:bg-surface-variant/50 rounded-full mx-2 transition-all';
+  var NAV_ACTIVE = 'nav-link bg-secondary-container text-on-secondary-container rounded-full mx-2 flex items-center gap-xs px-md py-sm shadow-[0_0_15px_rgba(255,94,7,0.4)]';
+  var currentView = 'laws';
+
+  function setActiveNav(view) {
+    Array.prototype.forEach.call(document.querySelectorAll('.nav-link'), function (el) {
+      el.className = (el.getAttribute('data-view') === view) ? NAV_ACTIVE : NAV_INACTIVE;
+    });
+  }
+
+  function selectedArticle() {
+    return ARTICLES.filter(function (x) { return x.id === state.selectedId; })[0];
+  }
+
+  function navigate(view) {
+    currentView = view;
+    setActiveNav(view);
+    var isLaws = view === 'laws';
+    document.getElementById('searchHeader').classList.toggle('hidden', !isLaws);
+    document.getElementById('contentGrid').classList.toggle('hidden', !isLaws);
+    var alt = document.getElementById('altView');
+    alt.classList.toggle('hidden', isLaws);
+    if (!isLaws) {
+      alt.innerHTML = renderAltView(view);
+      bindAltView(view);
+      alt.scrollTop = 0;
+    }
+  }
+
+  function goSearch(query) {
+    var input = document.getElementById('searchInput');
+    input.value = query;
+    state.tokens = tokenize(query);
+    navigate('laws');
+    search();
+  }
+  function goFilter(key) {
+    state.filter = key;
+    var law = LAWS.filter(function (l) { return l.key === key; })[0];
+    document.getElementById('filterLabel').textContent = key === 'all' ? '필터' : (law ? law.short : '필터');
+    buildFilterMenu();
+    navigate('laws');
+    search();
+  }
+
+  function altHeader(icon, badge, title, subtitle) {
+    return '<div class="glass-card rounded-2xl p-8 border-l-4 border-l-primary-container mb-6">' +
+      '<div class="flex items-center gap-3 mb-4"><span class="material-symbols-outlined text-primary-container text-[32px]">' + icon + '</span>' +
+      '<span class="font-label-caps text-label-caps text-tertiary-container tracking-widest border border-tertiary-container/30 px-3 py-1 rounded-full bg-tertiary-container/10">' + badge + '</span></div>' +
+      '<h1 class="font-display-xl text-display-xl text-primary mb-2">' + title + '</h1>' +
+      '<p class="font-body-lg text-body-lg text-on-surface-variant">' + subtitle + '</p></div>';
+  }
+
+  function renderAltView(view) {
+    if (view === 'dashboard') return renderDashboard();
+    if (view === 'safety') return renderSafety();
+    if (view === 'reports') return renderReports();
+    if (view === 'archive') return renderArchive();
+    if (view === 'help') return renderHelp();
+    return '';
+  }
+
+  function renderDashboard() {
+    var total = ARTICLES.length;
+    var statCards = LAWS.map(function (l, i) {
+      var accent = ['primary-container', 'tertiary-container', 'secondary-container', 'primary-container'][i % 4];
+      return '<div class="glass-card rounded-xl p-6 relative overflow-hidden">' +
+        '<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-' + accent + ' to-transparent opacity-50"></div>' +
+        '<div class="font-label-caps text-label-caps text-outline uppercase tracking-widest mb-2">' + esc(l.short) + '</div>' +
+        '<div class="font-data-mono text-' + accent + ' text-4xl font-bold neon-text-glow">' + l.count + '</div>' +
+        '<div class="text-on-surface-variant text-sm mt-2">' + esc(l.name) + '</div>' +
+        '<div class="text-outline font-data-mono text-[11px] mt-1">시행 ' + esc(l.eff || '') + '</div></div>';
+    }).join('');
+    var chips = QUICK.map(function (q) {
+      return '<button class="alt-quick bg-[#080808] border-2 border-tertiary-container/70 text-tertiary-container font-label-caps text-label-caps px-3 py-2 rounded-full hover:bg-tertiary-container/10 hover:border-tertiary-container transition-colors" data-q="' + esc(q) + '">' + esc(q) + '</button>';
+    }).join('');
+    return '<div class="max-w-5xl mx-auto">' +
+      altHeader('dashboard', 'DASHBOARD', '건설안전 법령 현황', '산업안전보건 관련 ' + total + '개 조문을 한 곳에서 검색하고 현장 조치 체크리스트를 확인하세요.') +
+      '<div class="glass-card rounded-xl p-6 mb-6 flex items-center justify-between">' +
+      '<div class="flex flex-col"><span class="font-label-caps text-label-caps text-outline mb-1">총 조문 수</span>' +
+      '<span class="font-data-mono text-primary-container text-5xl font-bold neon-text-glow">' + total + '</span></div>' +
+      '<div class="flex flex-col text-right"><span class="font-label-caps text-label-caps text-outline mb-1">포함 법령</span>' +
+      '<span class="font-data-mono text-tertiary-container text-5xl font-bold">' + LAWS.length + '</span></div></div>' +
+      '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">' + statCards + '</div>' +
+      '<div class="glass-card rounded-xl p-6"><div class="font-label-caps text-label-caps text-secondary-container uppercase tracking-widest mb-3">자주 찾는 항목</div>' +
+      '<div class="flex flex-wrap gap-2">' + chips + '</div></div></div>';
+  }
+
+  function renderSafety() {
+    var a = selectedArticle();
+    if (!a) {
+      return '<div class="max-w-4xl mx-auto">' + altHeader('fact_check', 'SAFETY CHECK', '현장 점검표', '먼저 Laws에서 조문을 검색·선택하면 해당 조문의 현장 조치 체크리스트가 여기에 표시됩니다.') +
+        '<button class="alt-goto bg-primary-container text-on-primary-container font-label-caps text-label-caps px-6 py-3 rounded-full" data-view="laws">법령 검색하러 가기</button></div>';
+    }
+    var items = buildChecklist(a);
+    var done = 0; for (var k in state.checks) { if (state.checks[k]) done++; }
+    var pct = items.length ? Math.round(done / items.length * 100) : 0;
+    var list = items.length ? items.map(function (it, i) {
+      var checked = !!state.checks[i];
+      return '<div class="alt-quest glass-card rounded-xl p-4 flex gap-3 items-start cursor-pointer ' + (checked ? 'opacity-60 border-outline-variant/30' : 'hover:border-tertiary-container/40') + '" data-i="' + i + '">' +
+        '<span class="material-symbols-outlined ' + (checked ? 'text-outline' : 'text-primary-container') + '"' + (checked ? '' : ' style="font-variation-settings:\'FILL\' 1;"') + '>' + (checked ? 'check_circle' : 'radio_button_unchecked') + '</span>' +
+        '<div><h5 class="font-title-md text-base ' + (checked ? 'text-outline line-through' : 'text-on-surface') + '">' + esc(it.label) + '</h5></div></div>';
+    }).join('') : '<div class="glass-card rounded-xl p-6 text-outline font-data-mono text-sm">이 조문에서 자동 추출된 조치 항목이 없습니다.</div>';
+    return '<div class="max-w-4xl mx-auto">' +
+      altHeader('fact_check', esc(a.law), a.article + ' 현장 점검표', esc(a.title)) +
+      '<div class="glass-card rounded-xl p-6 mb-6 flex items-center justify-between"><div><span class="font-label-caps text-label-caps text-outline">점검 진행률</span>' +
+      '<div class="font-data-mono text-primary-container text-3xl font-bold neon-text-glow"><span id="altPct">' + pct + '</span>%</div></div>' +
+      '<button id="altPrint" class="bg-transparent border border-primary-container text-primary-container font-label-caps py-3 px-6 rounded-lg hover:bg-primary-container/10 transition-colors uppercase tracking-wider">점검표 인쇄</button></div>' +
+      '<div class="flex flex-col gap-3">' + list + '</div>' +
+      '<p class="text-outline text-sm mt-6 font-data-mono">※ 참고용이며 법적 효력이 없습니다. 실제 적용 시 법령 원문과 전문가 확인이 필요합니다.</p></div>';
+  }
+
+  function renderReports() {
+    var a = selectedArticle();
+    var body = a ? '<div class="glass-card rounded-xl p-6">' +
+      '<div class="font-label-caps text-label-caps text-tertiary-container mb-2">선택된 조문</div>' +
+      '<h3 class="font-title-md text-title-md text-primary mb-2">' + esc(a.article + ': ' + a.title) + '</h3>' +
+      '<div class="text-on-surface-variant text-sm mb-1">' + esc(a.law) + (a.chapter ? ' · ' + esc(a.chapter) : '') + '</div>' +
+      '<p class="text-on-surface-variant text-sm mt-3 leading-relaxed">' + esc(a.body.replace(/\s+/g, ' ').slice(0, 220)) + '…</p>' +
+      '<button id="altPrint" class="mt-4 bg-primary-container text-on-primary-container font-label-caps text-label-caps px-6 py-3 rounded-full">보고서 인쇄 / PDF 저장</button></div>'
+      : '<div class="glass-card rounded-xl p-6 text-outline font-data-mono text-sm">Laws에서 조문을 선택하면 보고서를 생성할 수 있습니다.</div>';
+    return '<div class="max-w-4xl mx-auto">' +
+      altHeader('analytics', 'REPORTS', '조문 보고서', '선택한 조문과 현장 조치 체크리스트를 인쇄하거나 PDF로 저장할 수 있습니다.') + body + '</div>';
+  }
+
+  function renderArchive() {
+    var cards = LAWS.map(function (l) {
+      return '<button class="alt-archive glass-card rounded-xl p-6 text-left relative overflow-hidden hover:border-primary-container/50 transition-colors" data-key="' + l.key + '">' +
+        '<div class="absolute top-0 right-0 w-16 h-16 bg-primary-container/10 rounded-bl-full -mr-8 -mt-8"></div>' +
+        '<span class="font-label-caps text-label-caps text-tertiary-container tracking-widest border border-tertiary-container/30 px-3 py-1 rounded-full bg-tertiary-container/10">' + esc(l.short) + '</span>' +
+        '<h3 class="font-title-md text-title-md text-primary mt-4 mb-2">' + esc(l.name) + '</h3>' +
+        '<div class="flex items-center gap-6 mt-3"><div><span class="font-label-caps text-label-caps text-outline">조문 수</span>' +
+        '<div class="font-data-mono text-primary-container text-2xl font-bold">' + l.count + '</div></div>' +
+        '<div><span class="font-label-caps text-label-caps text-outline">시행일</span>' +
+        '<div class="font-data-mono text-tertiary-container text-lg font-bold">' + esc(l.eff || '-') + '</div></div></div></button>';
+    }).join('');
+    return '<div class="max-w-5xl mx-auto">' +
+      altHeader('inventory_2', 'ARCHIVE', '법령 아카이브', '법령을 선택하면 해당 법령으로 검색 범위를 좁혀 조문을 둘러볼 수 있습니다.') +
+      '<div class="grid grid-cols-1 md:grid-cols-2 gap-6">' + cards + '</div></div>';
+  }
+
+  function renderHelp() {
+    var rows = [
+      ['search', '키워드 검색', '현장 용어(비계, 추락, 굴착 등)를 입력하면 관련 조문을 관련도 순으로 보여줍니다. 여러 단어는 모두 포함(AND) 조건으로 검색됩니다.'],
+      ['filter_list', '법령 필터', '필터 버튼으로 전체 / 법 / 시행령 / 시행규칙 / 안전보건규칙 중 범위를 좁힐 수 있습니다.'],
+      ['fact_check', '현장 조치 체크리스트', '조문의 의무 문장을 자동 추출해 체크리스트로 만들어 줍니다. 항목을 클릭하면 완료 처리되고 진행률이 갱신됩니다.'],
+      ['warning', '면책 안내', '본 도구는 현장 참고용이며 법적 효력이 없습니다. 실제 적용 시 법령 원문과 안전관리자 등 전문가의 확인이 필요합니다.']
+    ].map(function (r) {
+      return '<div class="glass-card rounded-xl p-6 flex gap-4 items-start"><span class="material-symbols-outlined text-primary-container text-[28px]">' + r[0] + '</span>' +
+        '<div><h4 class="font-title-md text-title-md text-on-surface mb-2">' + r[1] + '</h4>' +
+        '<p class="text-on-surface-variant leading-relaxed">' + r[2] + '</p></div></div>';
+    }).join('');
+    return '<div class="max-w-4xl mx-auto">' +
+      altHeader('help', 'HELP', '사용 안내', 'LEX-CON 건설안전 법령 검색기 사용 방법입니다.') +
+      '<div class="flex flex-col gap-4">' + rows + '</div></div>';
+  }
+
+  function bindAltView(view) {
+    var alt = document.getElementById('altView');
+    Array.prototype.forEach.call(alt.querySelectorAll('.alt-quick'), function (el) {
+      el.addEventListener('click', function () { goSearch(el.getAttribute('data-q')); });
+    });
+    Array.prototype.forEach.call(alt.querySelectorAll('.alt-archive'), function (el) {
+      el.addEventListener('click', function () { goFilter(el.getAttribute('data-key')); });
+    });
+    Array.prototype.forEach.call(alt.querySelectorAll('.alt-goto'), function (el) {
+      el.addEventListener('click', function () { navigate('laws'); });
+    });
+    var print = alt.querySelector('#altPrint');
+    if (print) print.addEventListener('click', function () { window.print(); });
+    Array.prototype.forEach.call(alt.querySelectorAll('.alt-quest'), function (el) {
+      el.addEventListener('click', function () {
+        var i = el.getAttribute('data-i');
+        state.checks[i] = !state.checks[i];
+        navigate('safety');
+        // keep the right-panel checklist in sync when returning to Laws
+        paintQuests();
+      });
+    });
+  }
+
+  // ---------- init ----------
+  function init() {
+    var input = document.getElementById('searchInput');
+    var t;
+    input.addEventListener('input', function () {
+      clearTimeout(t);
+      t = setTimeout(function () { state.tokens = tokenize(input.value); search(); }, 120);
+    });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { state.tokens = tokenize(input.value); search(); }
+    });
+    document.getElementById('filterBtn').addEventListener('click', function (e) {
+      e.stopPropagation();
+      document.getElementById('filterMenu').classList.toggle('hidden');
+    });
+    document.addEventListener('click', function () {
+      document.getElementById('filterMenu').classList.add('hidden');
+    });
+    document.getElementById('filterMenu').addEventListener('click', function (e) { e.stopPropagation(); });
+    document.getElementById('reportBtn').addEventListener('click', function () {
+      navigate('reports');
+    });
+    // sidebar navigation
+    Array.prototype.forEach.call(document.querySelectorAll('.nav-link'), function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        navigate(el.getAttribute('data-view'));
+      });
+    });
+    document.getElementById('newAuditBtn').addEventListener('click', function () {
+      goSearch('');
+      document.getElementById('searchInput').focus();
+    });
+    document.getElementById('logoutBtn').addEventListener('click', function (e) {
+      e.preventDefault();
+      if (window.confirm('데모 환경입니다. 처음 화면으로 돌아갈까요?')) {
+        state.filter = 'all';
+        document.getElementById('filterLabel').textContent = '필터';
+        buildFilterMenu();
+        goSearch('');
+        navigate('dashboard');
+      }
+    });
+    buildFilterMenu();
+    state.tokens = tokenize(input.value);
+    search();
+    navigate('laws');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();
+</script>
+</body></html>
