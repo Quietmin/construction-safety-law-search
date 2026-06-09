@@ -2,10 +2,9 @@
 __pycache__/
 *.pyc
 
+# 비밀키 — 커밋 금지 (GPT_API_KEY 등)
+.env
+.env.*
+
 # 로컬 미리보기 설정
 .claude/
-
-# 이 폴더에 섞여 있는 다른 프로젝트(증기터빈 검측 가이드) — 업로드 제외
-ST_검측가이드.html
-data.js
-steam-turbine-guide/

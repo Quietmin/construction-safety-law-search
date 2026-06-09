@@ -136,10 +136,54 @@
     </style>
 </head>
 <body class="bg-[#080808] text-on-surface font-body-md overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- 접근 잠금 화면 (암호 입력 전 앱을 가림) -->
+<div id="lockGate" class="fixed inset-0 z-[100] flex items-center justify-center bg-[#080808] p-6">
+<div class="glass-card rounded-2xl p-8 w-full max-w-sm border-l-4 border-l-primary-container">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary-container text-[32px]" style="font-variation-settings:'FILL' 1;">lock</span>
+<span class="font-label-caps text-label-caps text-tertiary-container tracking-widest border border-tertiary-container/30 px-3 py-1 rounded-full bg-tertiary-container/10">LEX-CON</span>
+</div>
+<h1 class="font-display-xl text-3xl text-primary mb-2">접근 잠금</h1>
+<p class="text-on-surface-variant text-sm mb-6">계속하려면 암호를 입력하세요.</p>
+<input id="lockInput" type="password" inputmode="numeric" autocomplete="off" placeholder="암호" class="w-full bg-surface-container-high border-b border-outline-variant text-on-surface font-data-mono text-data-mono py-3 px-4 rounded-lg focus:outline-none focus:border-primary-container focus:shadow-[0_1px_10px_rgba(204,255,0,0.2)] transition-all placeholder:text-outline"/>
+<p id="lockError" class="text-error text-sm mt-2 h-5"></p>
+<button id="lockBtn" class="mt-2 w-full bg-primary-container text-on-primary-container font-label-caps text-label-caps py-3 rounded-full hover:bg-primary-fixed-dim transition-colors uppercase tracking-wider">잠금 해제</button>
+</div>
+</div>
+<script>
+(function () {
+  "use strict";
+  var PW = '1111';
+  var KEY = 'lexcon_unlocked';
+  var gate = document.getElementById('lockGate');
+  function unlock() {
+    try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+    if (gate && gate.parentNode) gate.parentNode.removeChild(gate);
+  }
+  var ok = false;
+  try { ok = sessionStorage.getItem(KEY) === '1'; } catch (e) {}
+  if (ok) { unlock(); return; }
+  var input = document.getElementById('lockInput');
+  var btn = document.getElementById('lockBtn');
+  var err = document.getElementById('lockError');
+  function attempt() {
+    if (input.value === PW) { unlock(); }
+    else { err.textContent = '암호가 올바르지 않습니다.'; input.value = ''; input.focus(); }
+  }
+  btn.addEventListener('click', attempt);
+  input.addEventListener('keydown', function (e) { if (e.key === 'Enter') attempt(); });
+  input.focus();
+})();
+</script>
 <!-- TopNavBar (Responsive hidden on desktop, used for structural reference if needed, but per rules, desktop focuses on SideNav multi-pane layout) -->
 <header class="hidden md:flex justify-between items-center max-w-container-max mx-auto px-gutter fixed top-0 w-full z-50 px-md py-xs bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-300 ease-in-out">
 <div class="text-headline-md font-headline-md text-secondary-container tracking-tighter">LEX-CON</div>
 <div class="flex items-center gap-4">
+<!-- GPT 페이지 내용 검증 배지 (정상이면 초록색 체크) -->
+<div id="pageVerify" title="페이지 내용 검증 (GPT)" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-outline-variant/40 bg-surface-container-high/60 cursor-default select-none transition-all">
+<span id="pvIcon" class="material-symbols-outlined text-[18px] text-on-surface-variant" style="font-variation-settings:'FILL' 1;">hourglass_top</span>
+<span id="pvText" class="font-label-caps text-[11px] text-on-surface-variant whitespace-nowrap">검증 대기</span>
+</div>
 <span class="material-symbols-outlined text-secondary-container hover:text-secondary hover:bg-surface-container-high transition-colors cursor-pointer p-2 rounded-full">notifications</span>
 <span class="material-symbols-outlined text-secondary-container hover:text-secondary hover:bg-surface-container-high transition-colors cursor-pointer p-2 rounded-full">settings</span>
 <img alt="User avatar" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida/AP1WRLuAZHp4_6JEAGIR8oSi5p-JcMrEufheT09TxxGy5CdyS9ey7OiAPdeF0La5U-QKsZ6mWv-e5kDEzg3u-gdZ68Gk4XfFb9D0RHesRChRNzMhi4dngMpgQctB3jmRIpwfjFQfhwSFotX-US_kxoD5rxKJryfwUku_Fpreat52flFR1C5ycOhfTnMdWdS8WkU5u6HofTl4vKNFbR3XGyDyYFr9-Jil7MHmlDixZlvkRpOzz_KGhTExw585YKJ-"/>
@@ -732,6 +776,9 @@
       bindAltView(view);
       alt.scrollTop = 0;
     }
+    // 화면이 그려진 뒤 GPT로 페이지 내용 검증 → 우측 상단 배지 갱신
+    clearTimeout(verifyTimer);
+    verifyTimer = setTimeout(function () { verifyPage(view); }, 350);
   }
 
   function goSearch(query) {
@@ -883,6 +930,79 @@
         // keep the right-panel checklist in sync when returning to Laws
         paintQuests();
       });
+    });
+  }
+
+  // ---------- GPT 페이지 내용 검증 (우측 상단 배지) ----------
+  // 각 화면의 실제 렌더 텍스트를 서버리스 함수(/api/verify)로 보내 GPT가
+  // "의도한 내용으로 올바르게 구성됐는지" 판정 → 정상이면 초록색 체크 표시.
+  // API 키는 서버(Vercel 환경변수)에서만 사용하며 브라우저에 노출되지 않는다.
+  var VERIFY_NAME = { dashboard: 'Dashboard', laws: 'Laws (법령 검색)', safety: 'Safety Check', reports: 'Reports', archive: 'Archive', help: 'Help' };
+  var VERIFY_EXPECT = {
+    dashboard: '대시보드 제목, 총 조문 수와 포함 법령 수, 법령별 통계 카드, 자주 찾는 항목 키워드 칩',
+    laws: '검색 입력창, 검색 결과 목록(건수 표시), 선택된 조문의 전문(원문), 항·호별 구조 분석, 현장 조치 체크리스트',
+    safety: '현장 점검표 제목, 점검 진행률(%), 의무 조치 체크리스트(또는 조문 선택 안내)',
+    reports: '보고서 제목, 선택된 조문 요약과 인쇄/PDF 저장 버튼(또는 조문 선택 안내)',
+    archive: '법령 아카이브 제목, 수록 법령 카드(법령명·조문 수·시행일)',
+    help: '사용 안내 제목과 검색·필터·체크리스트·면책 등 기능 설명'
+  };
+  var verifyCache = {}, verifySeq = 0, verifyTimer = null;
+  var PV_BASE = 'flex items-center gap-1.5 px-3 py-1.5 rounded-full border cursor-default select-none transition-all';
+
+  function paneText(view) {
+    var parts = [];
+    if (view === 'laws') {
+      var h = document.getElementById('searchHeader'), g = document.getElementById('contentGrid');
+      if (h) parts.push(h.innerText || '');
+      if (g) parts.push(g.innerText || '');
+    } else {
+      var a = document.getElementById('altView');
+      if (a) parts.push(a.innerText || '');
+    }
+    return parts.join(' ').replace(/\s+/g, ' ').trim().slice(0, 6000);
+  }
+
+  function setVerifyBadge(status, reason) {
+    var box = document.getElementById('pageVerify');
+    if (!box) return;
+    var icon = document.getElementById('pvIcon'), txt = document.getElementById('pvText');
+    box.title = reason || '페이지 내용 검증 (GPT)';
+    var map = {
+      checking: ['progress_activity', '검증 중…', 'text-on-surface-variant', 'border-outline-variant/40 bg-surface-container-high/60', true],
+      ok:       ['check_circle', '정상', 'text-green-400', 'border-green-400/60 bg-green-400/10 shadow-[0_0_12px_rgba(74,222,128,0.45)]', false],
+      warn:     ['error', '확인 필요', 'text-amber-400', 'border-amber-400/60 bg-amber-400/10', false],
+      off:      ['cloud_off', '검증 불가', 'text-outline', 'border-outline-variant/40 bg-surface-container-high/60', false]
+    };
+    var m = map[status] || map.off;
+    icon.textContent = m[0];
+    icon.className = 'material-symbols-outlined text-[18px] ' + m[2] + (m[4] ? ' animate-spin' : '');
+    icon.style.fontVariationSettings = "'FILL' 1";
+    txt.textContent = m[1];
+    txt.className = 'font-label-caps text-[11px] whitespace-nowrap ' + m[2];
+    box.className = PV_BASE + ' ' + m[3];
+  }
+
+  function applyVerify(d) { setVerifyBadge(d && d.ok ? 'ok' : 'warn', d && d.reason); }
+
+  function verifyPage(view) {
+    if (!document.getElementById('pageVerify')) return;
+    if (verifyCache[view]) { applyVerify(verifyCache[view]); return; }
+    setVerifyBadge('checking');
+    var seq = ++verifySeq;
+    fetch('/api/verify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ page: VERIFY_NAME[view] || view, expected: VERIFY_EXPECT[view] || '', content: paneText(view) })
+    }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(function (d) {
+      if (seq !== verifySeq) return;
+      verifyCache[view] = d;
+      applyVerify(d);
+    }).catch(function () {
+      if (seq !== verifySeq) return;
+      setVerifyBadge('off', '검증 서버에 연결할 수 없습니다. 배포 환경(Vercel) 또는 `vercel dev`에서만 동작합니다.');
     });
   }
 

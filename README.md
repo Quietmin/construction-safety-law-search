@@ -44,6 +44,22 @@ python build_data.py
 | `fetch_all.py` | Open-API로 법령·고시·별표 수집 → `fetched_laws.json` |
 | `build_data.py` | 구조화 + 템플릿 주입 → `index.html` |
 | `*.doc` | 사용자 제공 법령 원문(RTF) |
+| `api/verify.js` | GPT 페이지 검증 서버리스 함수 (Vercel) |
+
+## 페이지 내용 검증 (GPT)
+
+각 화면(Dashboard/Laws/Safety Check/Reports/Archive/Help)으로 이동하면 GPT가 그 페이지의 실제 렌더 내용이 의도대로 구성됐는지 판정해 **우측 상단 배지**에 표시합니다. 정상이면 초록색 체크(`정상`), 문제가 있으면 `확인 필요`로 나타납니다.
+
+- API 키는 **서버리스 함수(`api/verify.js`)에서만** 사용되며 브라우저로 내려가지 않습니다.
+- 동작 조건: Vercel 배포 환경 또는 로컬 `vercel dev`. 단순 정적 서버(파일 더블클릭)에서는 `검증 불가`로 표시되며 검색 등 나머지 기능은 그대로 동작합니다.
+
+**배포 시 필수 설정** — Vercel 프로젝트 → Settings → Environment Variables 에 다음을 등록하세요.
+
+| Key | Value |
+|-----|-------|
+| `GPT_API_KEY` | 본인의 OpenAI API 키 (`sk-...`) |
+
+> `.env` 의 키는 로컬(`vercel dev`) 전용이며 `.gitignore`로 커밋이 차단됩니다. 운영 키는 위 대시보드에서만 관리하세요. 모델은 `gpt-4o-mini` 를 사용합니다.
 
 ## 면책
 

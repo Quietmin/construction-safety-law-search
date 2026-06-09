@@ -1,0 +1,11 @@
+# 정적 배포에는 index.html 만 필요 — 소스/데이터/문서 제외
+*.py
+*.json
+*.doc
+*.md
+template.html
+code.html
+screen.png
+__pycache__/
+.claude/
+.git/
